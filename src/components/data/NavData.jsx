@@ -14,28 +14,32 @@ export const NavData = [
     text: 'ホーム',
     icon: <HomeIcon/>,
     path: '/',
-    isActive: true
+    isLogin: true,
+    isLogout: true,
   },
   {
     id: 1,
     text: '記事投稿',
     icon: <EditNoteIcon/>,
     path: '/createPost',
-    isActive: true
+    isLogin: true,
+    isLogout: true,
   },
   {
     id: 2,
     text: 'ログイン',
     icon: <LoginIcon/>,
     path: '/login',
-    isActive: true
+    isLogin: false,
+    isLogout: true,
   },
   {
     id: 3,
     text: 'ログアウト',
     icon: <LogoutIcon/>,
     path: '/logout',
-    isActive: true
+    isLogin: true,
+    isLogout: false,
   },
 ];
 
