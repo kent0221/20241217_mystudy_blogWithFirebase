@@ -6,7 +6,7 @@ import { memo } from 'react';
 
 
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
-import './LogCard.css';
+import './Card.css';
 import PropTypes from 'prop-types';
 
 export const LogCard = memo((props) => {
