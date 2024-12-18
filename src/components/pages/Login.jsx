@@ -3,6 +3,7 @@
 */ 
 
 import { memo } from 'react';
+import { HeaderLayout } from '../tmplates/HeaderLayout';
 // import PropTypes from 'prop-types';
 
 export const Login = memo(() => {
@@ -13,7 +14,9 @@ export const Login = memo(() => {
   // function
   return (
     <>
-      <h1>Login</h1>
+      <HeaderLayout>
+        <h1>Login</h1>
+      </HeaderLayout>
     </>
   );
 });

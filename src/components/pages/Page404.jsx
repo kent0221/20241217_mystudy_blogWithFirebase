@@ -3,6 +3,7 @@
 */ 
 
 import { memo } from 'react';
+import { HeaderLayout } from '../tmplates/HeaderLayout';
 // import PropTypes from 'prop-types';
 
 export const Page404 = memo(() => {
@@ -13,7 +14,9 @@ export const Page404 = memo(() => {
   // function
   return (
     <>
-      <p>指定したURLが存在しません</p>
+      <HeaderLayout>
+        <p>指定したURLが存在しません</p>
+      </HeaderLayout>
     </>
   );
 });
