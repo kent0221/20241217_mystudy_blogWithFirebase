@@ -1,0 +1,10 @@
+/* Page404.css */
+.c-page404 {
+  padding: 5rem 0; /* 例: 上下に余白 */
+  text-align: center; /* メッセージを中央寄せ */
+}
+
+.c-page404_message {
+  font-size: 2rem; /* メッセージのフォントサイズ */
+  margin-left: 2rem; /* 左端からの余白 */
+}

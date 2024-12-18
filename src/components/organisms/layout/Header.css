@@ -1,0 +1,12 @@
+/* Header.css */
+.c-header {
+  width: 100%;
+  background-color: #f0f0f0; /* 例：背景色 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 例: 影 */
+}
+
+.c-header_nav {
+  max-width: 960px;  /* 例: ヘッダーの最大幅 */
+  margin: 0 auto; /* ヘッダーを中央寄せ */
+  padding: 1rem 2rem; /* 例: ヘッダー内側の余白 */
+}
