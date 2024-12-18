@@ -3,6 +3,7 @@
 */ 
 
 import { memo } from 'react';
+import { HeaderLayout } from '../tmplates/HeaderLayout';
 // import PropTypes from 'prop-types';
 
 export const CreatePost = memo(() => {
@@ -13,7 +14,9 @@ export const CreatePost = memo(() => {
   // function
   return (
     <>
-      <h1>CreatePost</h1>
+      <HeaderLayout>
+        <h1>CreatePost</h1>
+      </HeaderLayout>
     </>
   );
 });

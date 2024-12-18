@@ -1,0 +1,19 @@
+/* Navbar.css */
+.c-nav {
+  width: 100%;
+  background-color: #f0f0f0; /* 例：背景色 */
+  padding: 1rem 0; /* 例：上下左右に余白 */
+}
+
+.c-nav_list {
+  display: flex;
+  justify-content: center; /* 横方向中央揃え */
+  align-items: center; /* 縦方向中央揃え */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-nav_listItem {
+  margin: 0 10px; /* リンク間の余白 */
+}
