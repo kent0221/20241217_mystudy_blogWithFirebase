@@ -2,42 +2,54 @@
 ** CreateCard.jsx;
 */ 
 
-import { memo } from 'react';
-import EditNoteIcon from '@mui/icons-material/EditNote';
+import { memo, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 import './Card.css';
-// import PropTypes from 'prop-types';
 
-export const CreateCard = memo(() => {
+export const CreateCard = memo((props) => {
   // props
+  const { onClick, icon, text } = props;
   // Context
   // hooks
   // State
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
   // function
-  const onClickPost = () => {
-    console.log('Post')
+  const onChangeTitle = (e) => {
+    setTitle(e.target.value);
   };
+  const onChangeContent = (e) => {
+    setContent(e.target.value);
+  };
+
   return (
     <>
       <div className="c-createCard">
-        <div className="c-createCard_title">
-          <h2>記事を投稿する</h2>
-        </div>
-        <div className="c-createCard_input">
-          <p>タイトル</p>
-          <input type="text" placeholder="タイトルを記入" id="title" value=''/>
-        </div>
-        <div className="c-createCard_textarea">
-          <p>内容</p>
-          <textarea placeholder="投稿内容を記入" id="content" value=''></textarea>
-        </div>
-        <div className="c-createCard_button">
-          <PrimaryButton onClick={onClickPost} icon={<EditNoteIcon/>} text='投稿する'/>
+        <div className="c-createCaard_container">
+          <div className="c-createCard_title">
+            <h2>記事を投稿する</h2>
+          </div>
+          <div className="c-createCard_input">
+            <p>タイトル</p>
+            <input type="text" placeholder="タイトルを記入" id="title" onChange={onChangeTitle} value={title}/>
+          </div>
+          <div className="c-createCard_textarea">
+            <p>内容</p>
+            <textarea placeholder="投稿内容を記入" id="content" onChange={onChangeContent} value={content}></textarea>
+          </div>
+          <div className="c-createCard_button">
+            <PrimaryButton onClick={onClick} icon={icon} text={text}/>
+          </div>
         </div>
       </div> 
     </>
   );
 });
 CreateCard.displayName = 'CreateCard';
-CreateCard.propTypes = {};
+CreateCard.propTypes = {
+  onClick: PropTypes.func,
+  icon: PropTypes.node,
+  text: PropTypes.string,
+};

@@ -6,7 +6,7 @@ import { memo } from 'react';
 
 
 import { HeaderLayout } from '../tmplates/HeaderLayout';
-import './Page404.css';
+import './Pages.css';
 // import PropTypes from 'prop-types';
 
 export const Page404 = memo(() => {

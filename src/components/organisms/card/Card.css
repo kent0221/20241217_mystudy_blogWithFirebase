@@ -24,3 +24,74 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+/* CreateCard.css */
+
+.c-createCard {
+  width: 100vw; 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5; /* 背景色を追加（必要に応じて変更可能） */
+}
+
+.c-createCaard_container {
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 600px; /* 横幅を調整 */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* 影を少し濃く */
+}
+
+.c-createCard_title, 
+.c-createCard_input, 
+.c-createCard_textarea, 
+.c-createCard_button {
+  margin-bottom: 20px; 
+}
+
+.c-createCard_input input,
+.c-createCard_textarea textarea {
+  width: 100%; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.c-createCard_textarea textarea {
+  min-height: 150px; 
+}
+
+.c-createCard_button button { /* PrimaryButton のボタン要素を選択 */
+  width: 100%; /* ボタンをコンテナの幅いっぱいに広げる */
+}
+
+/* PostCard.css */
+
+.c-postCard {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.c-postCard_title h2 {
+  margin-bottom: 10px;
+}
+
+.c-postCard_content p {
+  margin-bottom: 15px; 
+}
+
+.c-postCard_bottom {
+  display: flex;
+  justify-content: space-between; /* 両端揃え */
+  align-items: center; /* 垂直方向中央揃え */
+}
+
+.c-postCard_author{
+  color: #999;
+}

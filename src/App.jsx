@@ -1,16 +1,23 @@
+/**
+ * App.jsx
+ */
 import { BrowserRouter } from 'react-router-dom'
+import { CssBaseline } from '@mui/material'
+
 import './App.css'
 import { Router } from './router/Router'
-import { CssBaseline } from '@mui/material'
+import { LoginProvider } from './provider/LoginProvider'
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <CssBaseline/>
-          <Router/>
-      </BrowserRouter>
+      <LoginProvider>
+        <BrowserRouter>
+          <CssBaseline/>
+            <Router/>
+        </BrowserRouter>
+      </LoginProvider>
     </>
   )
 }

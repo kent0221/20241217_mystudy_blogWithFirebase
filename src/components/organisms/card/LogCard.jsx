@@ -3,11 +3,10 @@
 */ 
 
 import { memo } from 'react';
-
+import PropTypes from 'prop-types';
 
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
-import './LogCard.css';
-import PropTypes from 'prop-types';
+import './Card.css';
 
 export const LogCard = memo((props) => {
   // props
