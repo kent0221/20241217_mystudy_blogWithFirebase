@@ -1,12 +1,12 @@
 /* 
-** NavButton.jsx;
+** PrimaryButton.jsx;
 */ 
 
 import { Button } from '@mui/material';
 import { memo } from 'react';
 import PropTypes from 'prop-types';
 
-export const NavButton = memo((props) => {
+export const PrimaryButton = memo((props) => {
   // props
   const {onClick, icon, text} = props;
   // Context
@@ -19,8 +19,8 @@ export const NavButton = memo((props) => {
     </>
   );
 });
-NavButton.displayName = 'NavButton';
-NavButton.propTypes = {
+PrimaryButton.displayName = 'PrimaryButton';
+PrimaryButton.propTypes = {
   onClick: PropTypes.func,
   icon: PropTypes.node,
   text: PropTypes.string
