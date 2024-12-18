@@ -5,7 +5,7 @@
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { NavButton } from '../atoms/button/NavButton';
+import { PrimaryButton } from '../atoms/button/PrimaryButton';
 import { NavData } from '../data/NavData';
 import './Navbar.css';
 // import PropTypes from 'prop-types';
@@ -25,7 +25,7 @@ export const Navbar = memo(() => {
           {NavData.map((data)=>{
             return (
               <li key={data.id} className="c-nav_listItem">
-                <NavButton onClick={()=>{navigate(data.path)}} icon={data.icon} text={data.text}/>
+                <PrimaryButton onClick={()=>{navigate(data.path)}} icon={data.icon} text={data.text}/>
               </li>
             )
           })}
