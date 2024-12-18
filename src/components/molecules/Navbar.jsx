@@ -24,9 +24,13 @@ export const Navbar = memo(() => {
         <ul className="c-nav_list">
           {NavData.map((data)=>{
             return (
-              <li key={data.id} className="c-nav_listItem">
-                <PrimaryButton onClick={()=>{navigate(data.path)}} icon={data.icon} text={data.text}/>
-              </li>
+              data.isActive ? (
+                <li key={data.id} className="c-nav_listItem">
+                  <PrimaryButton onClick={()=>{navigate(data.path)}} icon={data.icon} text={data.text}/>
+                </li>
+              ) : (
+                null
+              )
             )
           })}
         </ul>

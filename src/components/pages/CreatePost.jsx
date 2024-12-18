@@ -4,6 +4,7 @@
 
 import { memo } from 'react';
 import { HeaderLayout } from '../tmplates/HeaderLayout';
+import { CreateCard } from '../organisms/card/CreateCard';
 // import PropTypes from 'prop-types';
 
 export const CreatePost = memo(() => {
@@ -16,6 +17,7 @@ export const CreatePost = memo(() => {
     <>
       <HeaderLayout>
         <h1>CreatePost</h1>
+        <CreateCard/>
       </HeaderLayout>
     </>
   );
