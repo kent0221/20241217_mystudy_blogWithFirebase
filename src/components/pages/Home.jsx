@@ -23,7 +23,6 @@ export const Home = memo(() => {
   return (
     <>
       <HeaderLayout>
-        <h1>Home</h1>
         <div className="c-home">
           <ul className="c-home_list">
             {[...Array(4)].map((_, id)=>{

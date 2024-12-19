@@ -8,3 +8,19 @@
   font-size: 2rem; /* メッセージのフォントサイズ */
   margin-left: 2rem; /* 左端からの余白 */
 }
+
+/* Home.css */
+
+.c-home {
+  padding-top: 30px; /* 上部の余白 */
+}
+
+.c-home_list {
+  list-style: none; /* リストの点々を消す */
+  padding: 0; /* リストのデフォルトの余白をリセット */
+}
+
+.c-home_listItem {
+  margin-bottom: 20px; /* カード間の余白 */
+  padding: 0 80px;
+}
