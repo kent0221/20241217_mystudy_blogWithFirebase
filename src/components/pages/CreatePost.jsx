@@ -15,13 +15,11 @@ export const CreatePost = memo(() => {
   // hooks
   // State
   // function
-  const onClickPost = () => {
-    console.log('Post')
-  };
+
   return (
     <>
       <HeaderLayout>
-        <CreateCard onClick={onClickPost} icon={<EditNoteIcon/>} text='投稿する'/>
+        <CreateCard icon={<EditNoteIcon/>} text='投稿する'/>
       </HeaderLayout>
     </>
   );
