@@ -11,7 +11,7 @@ import { LogCard } from '../organisms/card/LogCard';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../../Firebase';
 import { useLoginContext } from '../../provider/LoginContext';
-// import PropTypes from 'prop-types';
+
 
 export const Login = memo(() => {
   // props
@@ -46,4 +46,3 @@ export const Login = memo(() => {
   );
 });
 Login.displayName = 'Login';
-Login.propTypes = {};

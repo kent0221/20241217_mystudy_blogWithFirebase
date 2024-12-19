@@ -4,10 +4,10 @@
 
 import { memo } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { deleteDoc, doc } from 'firebase/firestore';
 
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 import PropTypes from 'prop-types';
-import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../../../Firebase';
 
 export const PostCard = memo((props) => {
@@ -30,7 +30,7 @@ export const PostCard = memo((props) => {
       window.location.href = '/';
     }
   };
-  
+
   return (
     <>
       <div className="c-postCard">

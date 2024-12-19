@@ -3,7 +3,6 @@
 */ 
 import { memo } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 
 import { Home } from '../components/pages/Home';
 import { Login } from '../components/pages/Login';
@@ -12,11 +11,7 @@ import { CreatePost } from '../components/pages/CreatePost';
 import { Page404 } from '../components/pages/Page404';
 
 export const Router = memo(() => {
-  // props
-  // Context
-  // hooks
-  // State
-  // function
+
   return (
     <>
       <Routes>
@@ -32,4 +27,3 @@ export const Router = memo(() => {
   );
 });
 Router.displayName = 'Router';
-Router.propTypes = {};

@@ -6,7 +6,6 @@ import { memo, useEffect, useState } from 'react';
 import { HeaderLayout } from '../tmplates/HeaderLayout';
 import { PostCard } from '../organisms/card/PostCard';
 import { useFirebase } from '../../hooks/useFirebase';
-// import PropTypes from 'prop-types';
 
 export const Home = memo(() => {
   // props
@@ -25,6 +24,7 @@ export const Home = memo(() => {
 
   useEffect(() => {
     getPosts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   return (
@@ -46,4 +46,3 @@ export const Home = memo(() => {
   );
 });
 Home.displayName = 'Home';
-Home.propTypes = {};
