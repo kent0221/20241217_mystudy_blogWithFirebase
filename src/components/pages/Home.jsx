@@ -1,31 +1,25 @@
 /* 
 ** Home.jsx;
 */ 
-
 import { memo, useEffect, useState } from 'react';
+
 import { HeaderLayout } from '../tmplates/HeaderLayout';
 import { PostCard } from '../organisms/card/PostCard';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../Firebase';
+import { useFirebase } from '../../hooks/useFirebase';
 // import PropTypes from 'prop-types';
 
 export const Home = memo(() => {
   // props
   // Context
   // hooks
+  const { getPostsData } = useFirebase();
   // State
   const [posts, setPosts] = useState([]);
   // function
 
   // Firestoreからデータ取得
   const getPosts = async () => {
-    const data = await getDocs(collection(db,'posts'));
-    // console.log('data: ', data);
-    // console.log('data.docs: ', data.docs);
-    // console.log('data.docs.map(( doc ) => ( doc )): ', data.docs.map(( doc ) => ( doc )));
-    // console.log('data.docs.map(( doc ) => ( { ...doc.data() } )): ', data.docs.map(( doc ) => ( { ...doc.data() } )));
-    // console.log('data.docs.map(( doc ) => ( { ...doc.data(), id:doc.id } )): ', data.docs.map(( doc ) => ( { ...doc.data(), id: doc.id } )));
-    const dataArray =data.docs.map( doc => ( { ...doc.data(), id: doc.id } ) )
+    const dataArray = await getPostsData();
     setPosts(dataArray);
   }
 
