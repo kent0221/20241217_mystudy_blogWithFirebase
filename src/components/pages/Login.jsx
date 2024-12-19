@@ -29,6 +29,8 @@ export const Login = memo(() => {
       setLoginUser(user);
       setIsAuth(true);
       localStorage.setItem('isAuth', true);
+      localStorage.setItem('loginUserID', user.uid);
+
       navigate('/');
     }).catch((error) => {
       const errorMessage = error.message;

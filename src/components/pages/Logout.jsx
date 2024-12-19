@@ -26,6 +26,7 @@ export const Logout = memo(() => {
       setIsAuth(false);
       setLoginUser({});
       localStorage.setItem('isAuth', false);
+      localStorage.setItem('loginUserID', '');
       // Sign-out successful.
     }).catch((error) => {
       // An error happened.
