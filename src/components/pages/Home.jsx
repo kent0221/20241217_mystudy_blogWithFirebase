@@ -35,7 +35,7 @@ export const Home = memo(() => {
             {posts.map((posts)=>{
               return (
                 <li key={posts.id} className="c-home_listItem">
-                  <PostCard title={posts?.title} content={posts?.content} author={posts.author?.username}/>
+                  <PostCard id={posts.id} title={posts?.title} content={posts?.content} author={posts?.author}/>
                 </li>
               )
             })}
