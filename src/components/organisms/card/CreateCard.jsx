@@ -7,14 +7,14 @@ import PropTypes from 'prop-types';
 
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 import './Card.css';
-import { addDoc, collection } from '@firebase/firestore';
-import { auth, db } from '../../../../Firebase';
+import { useFirebase } from '../../../hooks/useFirebase';
 
 export const CreateCard = memo((props) => {
   // props
   const { icon, text } = props;
   // Context
   // hooks
+  const { storePost } = useFirebase();
   // State
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -27,15 +27,7 @@ export const CreateCard = memo((props) => {
   };
   const onClickPost = async () => {
     try {
-      const postData = await addDoc(collection(db, 'posts'), {
-        title: title,
-        content: content,
-        author: {
-          username: auth.currentUser.displayName,
-          id: auth.currentUser.uid,
-        }
-      });    
-      console.log('保存されたドキュメントID：', postData.id);
+      storePost(title, content);
     } catch (error) {
       console.error('Firestore保存時にエラー発生：', error);
     } finally{

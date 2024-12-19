@@ -4,20 +4,33 @@
 
 import { memo } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { deleteDoc, doc } from 'firebase/firestore';
 
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 import PropTypes from 'prop-types';
+import { db } from '../../../../Firebase';
 
 export const PostCard = memo((props) => {
   // props
-  const { title, content, author } = props;
+  const { id, title, content, author } = props;
   // Context
+
   // hooks
   // State
   // function
-  const onClickDelete = () => {
-    console.log('delete')
+  const onClickDelete = async () => {
+    try {
+      const loginUserID = localStorage.getItem('loginUserID')
+      if(author.id === loginUserID){
+        await deleteDoc(doc(db, 'posts',id))
+      }
+    }catch(error){
+      console.error('削除時にエラー発生：', error);
+    } finally {
+      window.location.href = '/';
+    }
   };
+
   return (
     <>
       <div className="c-postCard">
@@ -29,7 +42,7 @@ export const PostCard = memo((props) => {
         </div>
         <div className="c-postCard_bottom">
           <div className="c-postCard_author">
-            <span>{author}</span>
+            <span>{author.username}</span>
           </div>
           <div className="c-postCard_button">
             <PrimaryButton onClick={onClickDelete} icon={<DeleteIcon/>} text='削除' />
@@ -41,7 +54,8 @@ export const PostCard = memo((props) => {
 });
 PostCard.displayName = 'PostCard';
 PostCard.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
   content: PropTypes.string,
-  author: PropTypes.string,
+  author: PropTypes.object,
 };

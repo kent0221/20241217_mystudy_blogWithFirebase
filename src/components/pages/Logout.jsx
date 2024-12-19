@@ -11,7 +11,6 @@ import { LogCard } from '../organisms/card/LogCard';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../../Firebase';
 import { useLoginContext } from '../../provider/LoginContext';
-// import PropTypes from 'prop-types';
 
 export const Logout = memo(() => {
   // props
@@ -26,6 +25,7 @@ export const Logout = memo(() => {
       setIsAuth(false);
       setLoginUser({});
       localStorage.setItem('isAuth', false);
+      localStorage.setItem('loginUserID', '');
       // Sign-out successful.
     }).catch((error) => {
       // An error happened.
@@ -42,4 +42,3 @@ export const Logout = memo(() => {
   );
 });
 Logout.displayName = 'Logout';
-Logout.propTypes = {};

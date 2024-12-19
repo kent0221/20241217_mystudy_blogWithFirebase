@@ -1,34 +1,41 @@
 /* 
 ** Home.jsx;
 */ 
+import { memo, useEffect, useState } from 'react';
 
-import { memo } from 'react';
 import { HeaderLayout } from '../tmplates/HeaderLayout';
 import { PostCard } from '../organisms/card/PostCard';
-// import PropTypes from 'prop-types';
+import { useFirebase } from '../../hooks/useFirebase';
 
 export const Home = memo(() => {
   // props
   // Context
   // hooks
+  const { getPostsData } = useFirebase();
   // State
+  const [posts, setPosts] = useState([]);
   // function
 
-  const data = {
-    title: 'タイトル',
-    content: '内容',
-    author: 'Ken',
+  // Firestoreからデータ取得
+  const getPosts = async () => {
+    const dataArray = await getPostsData();
+    setPosts(dataArray);
   }
 
+  useEffect(() => {
+    getPosts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  
   return (
     <>
       <HeaderLayout>
         <div className="c-home">
           <ul className="c-home_list">
-            {[...Array(4)].map((_, id)=>{
+            {posts.map((posts)=>{
               return (
-                <li key={id} className="c-home_listItem">
-                  <PostCard title={data.title} content={data.content} author={data.author}/>
+                <li key={posts.id} className="c-home_listItem">
+                  <PostCard id={posts.id} title={posts?.title} content={posts?.content} author={posts?.author}/>
                 </li>
               )
             })}
@@ -39,4 +46,3 @@ export const Home = memo(() => {
   );
 });
 Home.displayName = 'Home';
-Home.propTypes = {};

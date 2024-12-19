@@ -12,7 +12,7 @@ export const LoginProvider = (props) => {
   const { children } = props;
   // State
   const [ loginUser, setLoginUser ] = useState({});
-  const [ isAuth, setIsAuth ] = useState(false)
+  const [ isAuth, setIsAuth ] = useState(localStorage.getItem('isAuth'));
   // function
   
   return (
